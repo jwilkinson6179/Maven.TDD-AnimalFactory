@@ -5,7 +5,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -100,8 +102,76 @@ public class CatTest {
         assertEquals(expected, actual);
     }
 
-    // TODO - Create tests for `void eat(Food food)`
-    // TODO - Create tests for `Integer getId()`
-    // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
-    // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+    @Test
+    public void EatFoodTestThreeMeals()
+    {
+        // GIVEN
+        Food givenMeal = new Food();
+        Integer expected = 3;
+        String givenName = "Mr. Meow";
+        Date givenBirthDate = new Date(2016, 1, 1);
+        Integer givenId = 74;
+        testCat = new Cat(givenName, givenBirthDate, givenId);
+
+        // WHEN
+        testCat.eat(givenMeal);
+        testCat.eat(givenMeal);
+        testCat.eat(givenMeal);
+        Integer actual = testCat.getNumberOfMealsEaten();
+
+        //THEN
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void GetIdTest() {
+        // GIVEN
+        Integer expected = 321;
+        String givenName = "Bojangles";
+        Date givenBirthDate = new Date(2009, 4, 20);
+        Integer givenId = 321;
+        testCat = new Cat(givenName, givenBirthDate, givenId);
+
+        // WHEN
+        Integer actual = testCat.getId();
+
+        // THEN
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void IsItACatTest() {
+        // GIVEN
+        String givenName = "Mittens";
+        Date givenDate = new Date( 2019, 6, 11);
+        Integer givenId = 5555;
+        testCat = new Cat(givenName, givenDate, givenId);
+
+        // WHEN
+
+        Boolean actual = (testCat instanceof Cat);
+
+        // THEN
+
+        assertEquals(true, actual);
+    }
+
+    @Test
+    public void IsItAMammalTest() {
+        // GIVEN
+        String givenName = "Scruffie";
+        Date givenDate = new Date( 2005, 3, 10);
+        Integer givenId = 1;
+        testCat = new Cat(givenName, givenDate, givenId);
+
+        // WHEN
+
+        Boolean actual = (testCat instanceof Mammal);
+
+        // THEN
+
+        assertEquals(true, actual);
+    }
 }
