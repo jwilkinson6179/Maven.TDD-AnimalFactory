@@ -123,4 +123,6 @@ import static org.junit.Assert.assertEquals;
 
             assertEquals(expected, actual);
         }
+
+        // TODO: Test clear
     }

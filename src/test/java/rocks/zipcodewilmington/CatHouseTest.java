@@ -131,4 +131,6 @@ public class CatHouseTest {
 
         assertEquals(expected, actual);
     }
+
+    // TODO: Test clear()
 }
