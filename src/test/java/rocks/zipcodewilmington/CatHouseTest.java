@@ -1,11 +1,8 @@
 package rocks.zipcodewilmington;
 
-import com.sun.tools.corba.se.idl.InterfaceGen;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
@@ -63,7 +60,7 @@ public class CatHouseTest {
     {
         // GIVEN
         Integer expectedBefore = 2;
-        Integer expectedAfter = 2;
+        Integer expectedAfter = 1;
         testCatA = new Cat("Fleabag", new Date(2020, 1, 1), 4);
         testCatB = new Cat("Dirtball", new Date(2019, 11, 4), 9);
 
@@ -78,7 +75,7 @@ public class CatHouseTest {
         // THEN
 
         assertEquals(expectedBefore, actualBefore);
-        assertEquals(expectedAfter, expectedAfter);
+        assertEquals(expectedAfter, actualAfter);
     }
 
     @Test
@@ -86,7 +83,7 @@ public class CatHouseTest {
     {
         // GIVEN
         Integer expectedBefore = 2;
-        Integer expectedAfter = 2;
+        Integer expectedAfter = 1;
         testCatA = new Cat("Fluff", new Date(2017, 8, 65), 14);
         testCatB = new Cat("Snuffle", new Date(2019, 3, 155), 19);
 
@@ -101,7 +98,7 @@ public class CatHouseTest {
         // THEN
 
         assertEquals(expectedBefore, actualBefore);
-        assertEquals(expectedAfter, expectedAfter);
+        assertEquals(expectedAfter, actualAfter);
     }
 
     @Test

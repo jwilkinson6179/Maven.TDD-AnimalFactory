@@ -25,7 +25,6 @@ import static org.junit.Assert.assertEquals;
         @After
         public void tearDown() throws Exception {
             DogHouse.clear();
-            DogHouse.clear();
         }
 
         @Test
@@ -53,7 +52,7 @@ import static org.junit.Assert.assertEquals;
         {
             // GIVEN
             Integer expectedBefore = 2;
-            Integer expectedAfter = 2;
+            Integer expectedAfter = 1;
             testDogA = new Dog("Itchy", new Date(2020, 1, 1), 4);
             testDogB = new Dog("Scratchy", new Date(2019, 11, 4), 9);
 
@@ -68,7 +67,7 @@ import static org.junit.Assert.assertEquals;
             // THEN
 
             assertEquals(expectedBefore, actualBefore);
-            assertEquals(expectedAfter, expectedAfter);
+            assertEquals(expectedAfter, actualAfter);
         }
 
         @Test
@@ -76,7 +75,7 @@ import static org.junit.Assert.assertEquals;
         {
             // GIVEN
             Integer expectedBefore = 2;
-            Integer expectedAfter = 2;
+            Integer expectedAfter = 1;
             testDogA = new Dog("Spike", new Date(2017, 8, 65), 14);
             testDogB = new Dog("Kujo", new Date(2019, 3, 155), 19);
 
@@ -91,7 +90,7 @@ import static org.junit.Assert.assertEquals;
             // THEN
 
             assertEquals(expectedBefore, actualBefore);
-            assertEquals(expectedAfter, expectedAfter);
+            assertEquals(expectedAfter, actualAfter);
         }
 
         @Test
